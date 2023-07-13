@@ -1,0 +1,18 @@
+position
+relative = 내 위치 기준
+absolute = 부모 태그 기준 (부모태그에게 postion : relative 가 있어야함)
+
+가운데 정렬 = left: 0, right:0, margin: auto, width : 적절히
+ 
+z-index =  공중에 뜬 애들 우선 순위 정하기 (높을수록 앞으로)
+
+
+처음 시작 할때 기본 코드 하면 좋은것 
+
+div {
+box-sizing : border-box; //padding, border을 보이는 width에 포함
+}
+
+body {
+margin : 0px; //여백제거
+}   
