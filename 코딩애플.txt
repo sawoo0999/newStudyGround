@@ -7,7 +7,7 @@ absolute = 부모 태그 기준 (부모태그에게 postion : relative 가 있�
 z-index =  공중에 뜬 애들 우선 순위 정하기 (높을수록 앞으로)
 
 
-처음 시작 할때 기본 코드 하면 좋은것 
+CSS  스타일 처음 시작 할때 기본 코드 하면 좋은것 
 
 div {
 box-sizing : border-box; //padding, border을 보이는 width에 포함
@@ -15,4 +15,7 @@ box-sizing : border-box; //padding, border을 보이는 width에 포함
 
 body {
 margin : 0px; //여백제거
-}   
+}
+
+
+vertical-align : top/middle/bottom 글자 상하 정렬
