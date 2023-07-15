@@ -313,4 +313,9 @@ table {
   background-color: midnightblue;
   color: white;
   font-size: 12px;
+  cursor: pointer;
+}
+
+.H-button:hover {
+  background-color: mediumblue;
 }

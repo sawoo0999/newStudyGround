@@ -19,3 +19,7 @@ margin : 0px; //여백제거
 
 
 vertical-align : top/middle/bottom 글자 상하 정렬
+
+클래스 양을 줄이고 싶다면 뼈대용 Class , 살점용 Class 각각 제작
+
+ex) button class ="main-btn bh-red"
