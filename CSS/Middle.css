@@ -1,0 +1,65 @@
+div,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+.flex-container {
+  display: flex;
+  background-color: indianred;
+  height: 50px;
+  align-items: center;
+}
+
+.flex-item {
+  color: white;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-title,
+  .main-content {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-title,
+  .main-content {
+    font-size: 15px;
+  }
+}
+
+.mid-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+
+}
+
+.mid-box {
+  width: 400px;
+  height: 100px;
+  text-align: center;
+
+
+}
+@media screen and (max-width: 992px) {
+    .mid-container {
+        flex-wrap: wrap;
+     
+  }
+
+@media screen and (max-width: 576px) {
+  .mid-container {
+        flex-wrap: wrap;   
+   
+}
+

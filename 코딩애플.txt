@@ -23,3 +23,46 @@ vertical-align : top/middle/bottom 글자 상하 정렬
 클래스 양을 줄이고 싶다면 뼈대용 Class , 살점용 Class 각각 제작
 
 ex) button class ="main-btn bh-red"
+
+
+
+font 안티앨리어싱 주는법
+font 들어간 태그 {
+ transform: rotate(0.03deg) // 글자들을 약간 회전시켜서 부드럽게 만들기
+}
+
+
+
+
+display: flex;  // 쉽게 가로로 배치하는 법
+
+ justify-content: center;  //flex를 사용할때 가운데 정렬
+
+flex-direction: column; // 가로로 배치하는 법
+
+  flex-wrap: wrap; //화며에 넘치면 가로 정렬
+
+
+align-times : center; // 위아래 가운데 정렬
+
+flex-grow: 2;  //2번 박스에 1번 박스 보다  2배 차지 (nav 사용해서 상단 메뉴 할때 사용)
+
+
+
+div.(클래스)container>(자식)div.(자식 클래스)box*(개수)3
+
+단위
+
+vw //브라우저 폭(width)에 비례
+vh //브라우저 높이 
+rem //기본 폰트사이즈에 비례
+
+
+@media screen and (max-width:1000px) //반응형 웹사이트 할때 사용 
+
+
+많이사용하는 width: n px
+1200px //태블릿 디자인
+992px
+768px
+576px //모바일 디자인
