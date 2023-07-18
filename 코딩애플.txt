@@ -40,7 +40,7 @@ display: flex;  // 쉽게 가로로 배치하는 법
 
 flex-direction: column; // 가로로 배치하는 법
 
-  flex-wrap: wrap; //화며에 넘치면 가로 정렬
+  flex-wrap: wrap; //화면에 넘치면 가로 정렬
 
 
 align-times : center; // 위아래 가운데 정렬
