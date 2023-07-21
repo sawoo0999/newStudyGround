@@ -70,7 +70,7 @@ rem //기본 폰트사이즈에 비례
 576px //모바일 디자인
 
 
-awesome 아이콘 사이트 
+font awesome 아이콘 사이트 
 
 
 
