@@ -1,0 +1,51 @@
+@use "reset"; //다른 css 가져오기
+
+@mixin font-style($hole) {
+  //변수 지정해서 한번에 붙여넣기
+  font-size: $hole;
+  letter-spacing: -1px;
+}
+
+h2 {
+  @include font-style(30px);
+}
+h3 {
+  @include font-style(20px);
+}
+h4 {
+  @include font-style(10px);
+}
+
+%div {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.div-green {
+  @extend %div;
+  background-color: green;
+}
+.div-blue {
+  @extend %div;
+  background-color: blue;
+}
+
+.div-red {
+  @extend %div;
+  background-color: red;
+}
+
+$main-color: #2a4cb2;
+$sub-color: #eeeeee;
+$font-size: 16px;
+
+.background {
+  background-color: $main-color;
+  font-size: $font-size - 2px;
+}
+
+.box {
+  color: $sub-color;
+  font-size: $font-size + 2px;
+}

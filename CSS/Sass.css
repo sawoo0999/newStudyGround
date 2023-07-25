@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+div,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+h4 {
+  font-size: 10px;
+  letter-spacing: -1px;
+}
+
+.div-red, .div-blue, .div-green {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.div-green {
+  background-color: green;
+}
+
+.div-blue {
+  background-color: blue;
+}
+
+.div-red {
+  background-color: red;
+}
+
+.background {
+  background-color: #2a4cb2;
+  font-size: 14px;
+}
+
+.box {
+  color: #eeeeee;
+  font-size: 18px;
+}/*# sourceMappingURL=Sass.css.map */

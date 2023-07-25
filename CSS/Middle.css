@@ -112,3 +112,25 @@ body {
     transform: translateY(-50px);
   }
 }
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: aqua;
+  border: none;
+}
+
+input::-webkit-input-placeholder {
+  color: red;
+}
+
+progress {
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  appearance: none;
+  background-color: blue;
+}
+progress::-webkit-progress-value {
+  appearance: none;
+  background-color: red;
+}
