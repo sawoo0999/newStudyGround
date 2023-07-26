@@ -77,3 +77,22 @@ font awesome 아이콘 사이트
 transition : all 1s; //위에 모든코드중 하나도 변하면 1초에 걸쳐 변해줌
 
 opacity : 1; //투명도
+
+video
+poster="경로" //비디오에 썸네일
+loop //무한재생
+autoplay muted //자동재생 둘이 같이 있어야 자동 재생
+
+animation
+
+@keyframes 작명 {
+0%{
+ }
+}
+
+animation-name: "작명";
+animation-duration: 1s;
+
+animation-delay //딜레이양
+animation-iteration-count //반복횟수
+animation=timing-function //베지어
