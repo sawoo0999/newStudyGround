@@ -96,3 +96,24 @@ animation-duration: 1s;
 animation-delay //딜레이양
 animation-iteration-count //반복횟수
 animation=timing-function //베지어
+
+
+grid 
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; //  가로로 표를 생성  //1fr 균일하게 배치
+  grid-template-rows: 100px 100px; // 세로로 표를 생성
+  grid-gap: 10px; // 표사이사이 뛰우기
+  grid-column: 1/4; // 표 병합
+  grid-row: 1/4; // 표 병합
+
+  grid-area: "작명"; // 
+  grid-template-areas:
+    "nav nav nav nav"
+    "side content content content"
+    "side content content content"; // 자식이 작명한 것을 위치에 따라 자리를 차지
+
+
+
+
+  position: sticky;
