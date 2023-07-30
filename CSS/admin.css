@@ -8,6 +8,10 @@ body {
   margin: 0px;
 }
 
+.bg-container {
+  background-color: rgb(240, 240, 240);
+}
+
 .menu-container {
   position: fixed;
   background-color: #484bb3;
@@ -36,7 +40,7 @@ body {
 
 .nav-container {
   margin-left: 50px;
-  box-shadow: 0px 3px 0px gray;
+  box-shadow: 0px 3px 0px rgb(216, 216, 216);
 }
 
 .form-control {
@@ -51,4 +55,56 @@ body {
   padding: 10px;
   font-size: 20px;
   color: gray;
+}
+
+.dash-card {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 20px;
+  height: 120px;
+  background-color: white;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+}
+
+.dash-card i {
+  font-size: 50px;
+  padding: 20px;
+  color: gray;
+}
+
+.chart-title {
+  margin-top: 20px;
+  height: 70px;
+  padding: 20px;
+  box-shadow: 2px 2px 2px rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  border-left: 1px solid rgb(216, 216, 216);
+}
+
+.chart-box {
+  box-shadow: 2px 2px 2px rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  border-left: 1px solid rgb(216, 216, 216);
+}
+
+dash-container {
+  width: 100%;
+}
+
+.task-box {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.task-title {
+  background-color: white;
+  font-size: 20px;
+  padding: 20px;
+  height: 70px;
+  box-shadow: 2px 2px 2px rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  border-left: 1px solid rgb(216, 216, 216);
 }
