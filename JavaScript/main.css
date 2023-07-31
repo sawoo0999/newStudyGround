@@ -1,0 +1,10 @@
+.alert-box {
+    width: 50%;
+    padding: 30px;
+    background: skyblue;
+    border-radius: 10px;
+    display: none;
+    color: white;
+    text-align: center;
+    margin: auto;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="alert" class="alert-box">
+            <p class="check">아이디 입력하세요</p>
+            <button id="close">닫기</button>
+        </div>
+
+        <button onclick="view('block','아이디 입력하세요')">아이디</button>
+        <button onclick="view('block','비밀번호 입력하세요')">비밀번호</button>
+        <script>
+            function view(구멍, 구멍2) {
+                document.getElementById('alert').style.display = 구멍;
+                document.getElementsByClassName('check')[0].innerHTML = 구멍2;
+            }
+
+            document
+                .getElementById('close')
+                .addEventListener('click', function () {
+                    document.getElementById('alert').style.display = 'none';
+                });
+        </script>
+    </body>
+</html>
