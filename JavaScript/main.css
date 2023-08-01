@@ -8,3 +8,41 @@
     text-align: center;
     margin: auto;
 }
+
+.list-group {
+    overflow: hidden;
+    height: 0px;
+    transition: all 1s;
+}
+.black-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show-modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.view {
+    height: 400px;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    transform: translateY(0px);
+    transition: all 1s;
+}
+
+.down-bg {
+    transform: translateY(100px);
+}

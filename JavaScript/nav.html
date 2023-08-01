@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+
+        <div class="black-bg">
+            <div class="white-bg">
+                <h4>로그인하세요</h4>
+                <button class="btn btn-danger" id="close">닫기</button>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Navbar</span>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <button class="ui-open">열기</button>
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+
+        <script>
+            $('.ui-open').on('click', function () {
+                $('.black-bg').addClass('show-modal', 'down-bg');
+            });
+            $('.btn').on('click', function () {
+                $('.black-bg').removeClass('show-modal', 'down-bg');
+            });
+        </script>
+
+        <script>
+            document
+                .querySelector('.navbar-toggler')
+                .addEventListener('click', function () {
+                    document
+                        .querySelector('.list-group')
+                        .classList.toggle('view');
+                });
+
+            // document
+            //     .getElementsByClassName('navbar-toggler')[0]
+            //     .addEventListener('click', function () {
+            //         document
+            //             .getElementsByClassName('list-group')[0]
+            //             .classList.toggle('view');
+            //     });
+        </script>
+
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>
