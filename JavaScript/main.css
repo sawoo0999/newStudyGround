@@ -43,6 +43,12 @@
     transition: all 1s;
 }
 
-.down-bg {
-    transform: translateY(100px);
+.dark-mod {
+    background-color: black;
+    color: white;
+}
+
+.light-mod {
+    background: white;
+    color: black;
 }
