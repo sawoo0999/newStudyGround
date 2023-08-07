@@ -20,6 +20,30 @@
 
         <span class="badge bg-dark" id="dark">Dark 🔄</span>
 
+        <div class="alert alert-danger">
+            <span id="countdown">5</span>초 이내 구매시 사은품 증정!
+        </div>
+
+        <script>
+            // setTimeout(function () {
+            //     $('.alert').hide();
+            // }, 5000);
+            // setInterval(function () {
+            //     alert('안녕');
+            // }, 5000);
+
+            var 타이머 = 5;
+            var showtime = setInterval(function () {
+                타이머 -= 1;
+                if (타이머 >= 0) {
+                    document.querySelector('#countdown').innerHTML = 타이머;
+                }
+                if (타이머 == 0) {
+                    $('.alert').hide();
+                }
+            }, 1000);
+        </script>
+
         <script>
             var count = 0;
 
@@ -59,6 +83,7 @@
             }
             pass(80, 40);
         </script>
+
         <script src="CSS/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -38,12 +38,23 @@
 
         <script>
             $('.btn-primary').on('click', function (e) {
-                if ($('#id').val() == '' || $('#password').val() == '') {
-                    alert('입력해주세요');
+                var email = $('#id').val();
+                var password = $('#password').val();
+                if (
+                    email == '' ||
+                    password == '' ||
+                    /\S+@\S+.\S+/.test(email) == false
+                ) {
+                    alert(
+                        '공백 없이 입력해주세요 또는 이메일형식으로 입력해주세요',
+                    );
                     e.preventDefault();
                     return false;
-                } else if ($('#password').length < 6) {
-                    alert('6자이상 적어주세요');
+                } else if (
+                    password.length < 6 ||
+                    /[A-Z]/.test(password) == false
+                ) {
+                    alert('6자이상 입력해주세요 또는 대문자로 입력해주세요');
                     e.preventDefault();
                     return false;
                 } else {
