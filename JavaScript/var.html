@@ -67,5 +67,25 @@
 
             //
         </script>
+
+        <script>
+            // function ms(분, 초) {
+            //     var result = (분 * 60 + 초) * 1000;
+            //     return result;
+            // }
+
+            // ms();
+            // document.write(ms(2, 10));
+
+            function cash(가격, 첫구매) {
+                var discount = 가격 - 가격 * 0.1;
+                if (첫구매 == true) {
+                    discount = discount - 1.5;
+                }
+                return discount;
+            }
+
+            document.write(cash(10, true));
+        </script>
     </body>
 </html>
