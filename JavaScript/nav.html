@@ -99,9 +99,9 @@
             window.addEventListener('scroll', function () {
                 var htmlscroll =
                     document.querySelector('html').scrollHeight -
-                    document.querySelector('html').clientHeight; //웹페이지 살제높이
+                    document.querySelector('html').clientHeight; //웹페이지 살제높이 - 웹페이지 보이는 높이
                 var htmlsize = document.querySelector('html').scrollTop; // 웹페이지 스크롤양;
-                var scrolled = (htmlsize / htmlscroll) * 100;
+                var scrolled = (htmlsize / htmlscroll) * 100; //웹페이지 살제높이 - 웹페이지 보이는 높이 / 웹페이지 스크롤양; * 100
                 document.querySelector('.gauge').style.width = scrolled + '%';
             });
         </script>
@@ -159,6 +159,16 @@
             //             .getElementsByClassName('list-group')[0]
             //             .classList.toggle('view');
             //     });
+        </script>
+
+        <script>
+            document
+                .querySelector('.black-bg')
+                .addEventListener('click', function (e) {
+                    if (e.target == document.querySelector('.black-bg')) {
+                        $('.black-bg').removeClass('show-modal');
+                    }
+                });
         </script>
 
         <script src="CSS/js/bootstrap.min.js"></script>
