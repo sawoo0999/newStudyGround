@@ -1,3 +1,45 @@
+var totalP = [28, 30, 32];
+var totalT = [90, 95, 100, 105];
+var menu = ['모자', '셔츠', '바지', '양말'];
+
+$('.form-select').eq(0).html('');
+menu.forEach(function (a) {
+    $('.form-select')
+        .eq(0)
+        .append('<option>' + a + '</option>');
+});
+
+$('.form-select')
+    .eq(0)
+    .on('input', function () {
+        var shirt = this.value;
+        if (shirt == '셔츠') {
+            $('.form-select').eq(1).html('');
+            $('.form-select').eq(1).removeClass('size-hide');
+            totalT.forEach(function (a) {
+                $('.form-select')
+                    .eq(1)
+                    .append('<option>' + a + '</option>');
+            });
+        } else if (shirt == '바지') {
+            $('.form-select').eq(1).removeClass('size-hide');
+            $('.form-select').eq(1).html('');
+            totalP.forEach(function (a) {
+                $('.form-select')
+                    .eq(1)
+                    .append('<option>' + a + '</option>');
+            });
+        } else {
+            $('.form-select').eq(1).addClass('size-hide');
+        }
+    });
+
+// var a = document.createElement('p');
+// a.innerHTML = '안녕';
+// document.querySelector('#test').appendChild(a);
+
+// document.querySelector('.form-select').insertAdjacentHTML('beforeend', 템플릿);
+
 //버튼0 누르면
 // 모든 버튼에 붙은 orange 클래스명 제거
 // 버튼0에 orange 클래스명 추가

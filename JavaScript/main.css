@@ -122,3 +122,7 @@ ul.list::after {
 .show {
     display: block;
 }
+
+.size-hide {
+    display: none;
+}
