@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"></div>
+        </div>
+
+        <div class="container">
+            <button class="btn btn-danger">더보기</button>
+        </div>
+        <script>
+            var count = 0;
+            $('.btn').on('click', function () {
+                count += 1;
+                if (count == 1) {
+                    $.get('https://codingapple1.github.io/js/more1.json').done(
+                        (data) => {
+                            data.forEach((a) => {
+                                var list = `                <div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100" />
+                    <h5>${a.title}</h5>
+                    <p>가격 : ${a.price}</p>
+                    </div>`;
+                                $('.row').append(list);
+                            });
+                        },
+                    );
+                } else if (count == 2) {
+                    $.get('https://codingapple1.github.io/js/more2.json').done(
+                        (data) => {
+                            data.forEach((a) => {
+                                var list = `                <div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100" />
+                    <h5>${a.title}</h5>
+                    <p>가격 : ${a.price}</p>
+                    </div>`;
+                                $('.row').append(list);
+                            });
+                        },
+                    );
+                    count = 0;
+                    document.querySelector('.btn').style.display = 'none';
+                }
+            });
+        </script>
+        <script>
+            var list = `                <div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100" />
+                    <h5>Card title</h5>
+                    <p>가격 : 70000</p>
+                </div>`;
+
+            for (let i = 0; i < 3; i++) {
+                $('.row').append(list);
+            }
+        </script>
+        <script src="JS/JS.js"></script>
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -80,13 +80,13 @@ var products = [
     { id: 2, price: 60000, title: 'Black Monastery' },
 ];
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < products.length; i++) {
     card(i);
 }
 
 function card(구멍) {
-    var title = document.querySelectorAll('.card-body h5')[구멍];
-    var price = document.querySelectorAll('.card-body p')[구멍];
+    var title = document.querySelectorAll('.row h5')[구멍];
+    var price = document.querySelectorAll('.row p')[구멍];
     title.innerHTML = products[구멍].title;
     price.innerHTML = '가격 : ' + products[구멍].price;
 }
