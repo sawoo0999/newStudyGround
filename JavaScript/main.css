@@ -126,3 +126,21 @@ ul.list::after {
 .size-hide {
     display: none;
 }
+
+.card-background {
+    width: 3000px;
+    margin-top: 800px;
+    margin-bottom: 1600px;
+}
+
+.card-box img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.card-box {
+    position: sticky;
+    top: 400px;
+    margin-top: 200px;
+}

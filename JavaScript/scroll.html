@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="card-background">
+            <div class="card-box">
+                <img src="Image/card1.png" />
+            </div>
+            <div class="card-box">
+                <img src="Image/card2.png" />
+            </div>
+            <div class="card-box">
+                <img src="Image/card3.png" />
+            </div>
+        </div>
+
+        <script>
+            $(window).scroll(function () {
+                var 높이 = $(window).scrollTop();
+                var y = (-1 / 500) * 높이 + 115 / 50;
+                var z = (-1 / 5000) * 높이 + 565 / 500;
+                $('.card-box').eq(0).css('opacity', y);
+                $('.card-box')
+                    .eq(0)
+                    .css('transform', 'scale(' + z + ')');
+            });
+        </script>
+
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -186,10 +186,46 @@
                     <img src="https://via.placeholder.com/600" class="w-100" />
                     <h5>Card title</h5>
                     <p>가격 : 70000</p>
+                    <button class="buy">구매</button>
                 </div>`;
 
             for (let i = 0; i < 3; i++) {
                 $('.row').append(list);
+            }
+
+            // var arr = [1, 2, 3];
+            // var newarr = JSON.stringify(arr);
+            // localStorage.setItem('num', newarr); // 자료 입력
+        </script>
+
+        <script>
+            for (let i = 0; i < products.length; i++) {
+                $('.buy')
+                    .eq(i)
+                    .click(function () {
+                        var bro = document.querySelectorAll('.buy')[i];
+                        var prebro = bro.previousElementSibling;
+                        var last = prebro.previousElementSibling;
+                        var arrayshop = [last.innerHTML];
+                        if (localStorage.getItem('cart') == null) {
+                            localStorage.setItem(
+                                'cart',
+                                JSON.stringify(arrayshop),
+                            );
+                        } else {
+                            var getcar = JSON.parse(
+                                localStorage.getItem('cart'),
+                            );
+
+                            if (getcar[i] != last.innerHTML) {
+                                getcar.push(last.innerHTML);
+                            }
+                            localStorage.setItem(
+                                'cart',
+                                JSON.stringify(getcar),
+                            );
+                        }
+                    });
             }
         </script>
         <script src="JS/JS.js"></script>
