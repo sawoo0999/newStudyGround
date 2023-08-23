@@ -17,13 +17,13 @@
         <div style="overflow: hidden">
             <div class="slide-container">
                 <div class="slide-box">
-                    <img src="Image/car1.png" />
+                    <img src="Image/car1.png" draggable="false" />
                 </div>
                 <div class="slide-box">
-                    <img src="Image/car2.png" />
+                    <img src="Image/car2.png" draggable="false" />
                 </div>
                 <div class="slide-box">
-                    <img src="Image/car3.png" />
+                    <img src="Image/car3.png" draggable="false" />
                 </div>
             </div>
             <button class="before">이전</button>
@@ -33,6 +33,133 @@
             <button class="next">다음</button>
             <button class="next2">다2음</button>
         </div>
+
+        <script>
+            var start = 0;
+            var check = false;
+            var total = 0;
+            var count = 0;
+            $('.slide-box')
+                .eq(0)
+                .on('mousedown', function (e) {
+                    start = e.clientX;
+                    check = true;
+                });
+            $('.slide-box')
+                .eq(0)
+                .on('mousemove', function (e) {
+                    total = e.clientX - start;
+                    if (check == true) {
+                        if (total < 0) {
+                            $('.slide-container').css(
+                                'transform',
+                                `translateX(${total}px)`,
+                            );
+                        }
+                    }
+                });
+
+            $('.slide-box')
+                .eq(0)
+                .on('mouseup', function (e) {
+                    check = false;
+                    if (total <= -200) {
+                        count = 1;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    } else {
+                        count = 0;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    }
+                });
+
+            $('.slide-box')
+                .eq(1)
+                .on('mousedown', function (e) {
+                    start = e.clientX;
+                    check = true;
+                });
+            $('.slide-box')
+                .eq(1)
+                .on('mousemove', function (e) {
+                    total = e.clientX - start;
+                    if (check == true) {
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(calc(${total}px - ${count}00vw))`,
+                        );
+                    }
+                });
+
+            $('.slide-box')
+                .eq(1)
+                .on('mouseup', function (e) {
+                    check = false;
+                    if (total > 200) {
+                        count = 0;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    } else if (total < -200) {
+                        count = 2;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    } else {
+                        count = 1;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    }
+                });
+
+            $('.slide-box')
+                .eq(2)
+                .on('mousedown', function (e) {
+                    start = e.clientX;
+                    check = true;
+                });
+            $('.slide-box')
+                .eq(2)
+                .on('mousemove', function (e) {
+                    total = e.clientX - start;
+                    if (check == true) {
+                        if (total > 0) {
+                            $('.slide-container').css(
+                                'transform',
+                                `translateX(calc(${total}px - ${count}00vw))`,
+                            );
+                        }
+                    }
+                });
+
+            $('.slide-box')
+                .eq(2)
+                .on('mouseup', function (e) {
+                    check = false;
+                    if (total > 200) {
+                        count = 1;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    } else {
+                        count = 2;
+                        $('.slide-container').css(
+                            'transform',
+                            `translateX(-${count}00vw)`,
+                        );
+                    }
+                });
+        </script>
 
         <script>
             var count = 1;
