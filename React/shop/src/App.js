@@ -6,6 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import data from "./data.js";
 import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Detail } from "./detail.js";
 
 function App() {
   let [shoes] = useState(data);
@@ -20,21 +22,34 @@ function App() {
         <Container>
           <Navbar.Brand href="#home">Shop</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">T-shirt</Nav.Link>
-            <Nav.Link href="#features">Pants</Nav.Link>
-            <Nav.Link href="#pricing">Shoes</Nav.Link>
+            <Link to="/" className="shop-link">
+              Home
+            </Link>
+            <Link to="/detail" className="shop-link">
+              Detail
+            </Link>
           </Nav>
         </Container>
       </Navbar>
 
-      <div className="main-bg"></div>
-      <div className="container">
-        <div className="row">
-          {shoes.map((a, i) => {
-            return <Shoewshop shoes={shoes[i]} img={img[i]} />;
-          })}
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="main-bg"></div>
+              <div className="container">
+                <div className="row">
+                  {shoes.map((a, i) => {
+                    return <Shoewshop shoes={shoes[i]} img={img[i]} />;
+                  })}
+                </div>
+              </div>
+            </>
+          }
+        />
+        <Route path="/detail" element={<Detail />} />
+      </Routes>
     </div>
   );
 }

@@ -47,3 +47,12 @@
 .main-img {
   width: 100%;
 }
+
+.shop-link {
+  margin-right: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: #eee;
+  font-size: 15px;
+  opacity: 0.5;
+}
