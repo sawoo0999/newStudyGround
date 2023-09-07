@@ -4,30 +4,42 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import data from "./data.js";
+import data from "./routes/data";
 import { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { Detail } from "./detail.js";
+import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import Detail from "./routes/detail";
 
 function App() {
   let [shoes] = useState(data);
-  let [img, setimg] = useState([
+  let [img] = useState([
     "https://codingapple1.github.io/shop/shoes1.jpg",
     "https://codingapple1.github.io/shop/shoes2.jpg",
     "https://codingapple1.github.io/shop/shoes3.jpg",
   ]);
+  let navigat = useNavigate();
+
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">Shop</Navbar.Brand>
           <Nav className="me-auto">
-            <Link to="/" className="shop-link">
+            <Nav.Link
+              onClick={() => {
+                navigat("/");
+              }}
+              className="shop-link"
+            >
               Home
-            </Link>
-            <Link to="/detail" className="shop-link">
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigat("/detail");
+              }}
+              className="shop-link"
+            >
               Detail
-            </Link>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -48,8 +60,39 @@ function App() {
             </>
           }
         />
-        <Route path="/detail" element={<Detail />} />
+
+        <Route
+          path="/detail/:id"
+          element={<Detail shoes={shoes} img={img} />}
+        />
+
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤버</div>} />
+          <Route path="location" element={<About />} />
+        </Route>
+        <Route path="/event" element={<Sale />}>
+          <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>} />
+          <Route path="two" element={<p>생일기념 쿠폰 받기</p>} />
+        </Route>
       </Routes>
+    </div>
+  );
+}
+
+function Sale() {
+  return (
+    <div>
+      <h4>오늘의 이벤트</h4>
+      <Outlet></Outlet>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h4>회사 정보</h4>
+      <Outlet></Outlet>
     </div>
   );
 }

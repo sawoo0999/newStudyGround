@@ -56,3 +56,7 @@
   font-size: 15px;
   opacity: 0.5;
 }
+
+.detail-img img {
+  width: 100%;
+}
