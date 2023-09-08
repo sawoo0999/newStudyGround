@@ -53,7 +53,13 @@ function App() {
               <div className="container">
                 <div className="row">
                   {shoes.map((a, i) => {
-                    return <Shoewshop shoes={shoes[i]} img={img[i]} />;
+                    return (
+                      <Shoewshop
+                        shoes={shoes[i]}
+                        img={img[i]}
+                        navigat={navigat}
+                      />
+                    );
                   })}
                 </div>
               </div>
@@ -100,7 +106,13 @@ function About() {
 function Shoewshop(props) {
   return (
     <div className="col-md-4">
-      <img src={props.img} className="main-img" />
+      <img
+        onClick={() => {
+          props.navigat(`/detail/${props.shoes.id}`);
+        }}
+        src={props.img}
+        className="main-img"
+      />
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content}</p>
       <p>가격 : {props.shoes.price}</p>
