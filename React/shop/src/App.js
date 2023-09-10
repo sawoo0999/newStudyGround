@@ -8,16 +8,23 @@ import data from "./routes/data";
 import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/detail";
+import axios from "axios";
 
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setshoes] = useState(data);
   let [img] = useState([
     "https://codingapple1.github.io/shop/shoes1.jpg",
     "https://codingapple1.github.io/shop/shoes2.jpg",
     "https://codingapple1.github.io/shop/shoes3.jpg",
+    "https://codingapple1.github.io/shop/shoes4.jpg",
+    "https://codingapple1.github.io/shop/shoes5.jpg",
+    "https://codingapple1.github.io/shop/shoes6.jpg",
+    "https://codingapple1.github.io/shop/shoes7.jpg",
+    "https://codingapple1.github.io/shop/shoes8.jpg",
+    "https://codingapple1.github.io/shop/shoes9.jpg",
   ]);
   let navigat = useNavigate();
-
+  let [count, setcount] = useState(0);
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
@@ -63,6 +70,34 @@ function App() {
                   })}
                 </div>
               </div>
+
+              <button
+                onClick={() => {
+                  if (count == 0) {
+                    setcount(1);
+                    axios
+                      .get("https://codingapple1.github.io/shop/data2.json")
+                      .then((result) => {
+                        let copy = [...shoes, ...result.data];
+                        setshoes(copy);
+                      });
+                  } else if (count == 1) {
+                    setcount(2);
+                    axios
+                      .get("https://codingapple1.github.io/shop/data3.json")
+                      .then((result1) => {
+                        let copy = [...shoes, ...result1.data];
+                        console.log(copy);
+                        setshoes(copy);
+                      });
+                  } else {
+                    alert("더이상없습니다.");
+                  }
+                  console.log(count);
+                }}
+              >
+                더보기
+              </button>
             </>
           }
         />
