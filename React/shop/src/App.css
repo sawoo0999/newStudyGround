@@ -60,3 +60,12 @@
 .detail-img img {
   width: 100%;
 }
+
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: all 1s;
+}

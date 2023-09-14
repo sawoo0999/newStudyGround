@@ -1,6 +1,7 @@
 import { Alert } from "bootstrap";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 function Detail(props) {
   useEffect(() => {
@@ -10,13 +11,23 @@ function Detail(props) {
       setalert(false);
     }, 2000);
   }, []);
+  // useEffect(() => {
+  //   let b = setTimeout(() => {
+  //     setfade("end");
+  //   }, 500);
+  //   return () => {
+  //     clearTimeout(b);
+  //     setfade("");
+  //   };
+  // }, []);
 
   let [alert1, setalert] = useState(true);
   let { id } = useParams();
   let newid = props.shoes.find((a) => {
     return a.id == id;
   });
-
+  let [tab, settab] = useState(0);
+  let [fade, setfade] = useState("");
   return (
     <div className="container">
       {alert1 == true ? (
@@ -33,8 +44,62 @@ function Detail(props) {
           <button className="btn btn-danger">주문하기</button>
         </div>
       </div>
+      <Nav variant="tabs" defaultActiveKey="link0">
+        <Nav.Item>
+          <Nav.Link
+            eventKey="link0"
+            onClick={() => {
+              settab(0);
+            }}
+          >
+            버튼0
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            eventKey="link1"
+            onClick={() => {
+              settab(1);
+            }}
+          >
+            버튼1
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            eventKey="link2"
+            onClick={() => {
+              settab(2);
+            }}
+          >
+            버튼2
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <TabConent tab={tab} />
     </div>
   );
+}
+function TabConent({ tab, shoes }) {
+  let [ani, setani] = useState("");
+  useEffect(() => {
+    let a = setTimeout(() => {
+      setani("end");
+    }, 500);
+
+    return () => {
+      clearTimeout(a);
+      setani("");
+    };
+  }, [tab]);
+
+  if (tab == 0) {
+    return <div className={"start " + ani}>내용</div>;
+  } else if (tab == 1) {
+    return <div className={"start " + ani}>내용2</div>;
+  } else {
+    return <div className={"start " + ani}>내용3</div>;
+  }
 }
 
 export default Detail;
