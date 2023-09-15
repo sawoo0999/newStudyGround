@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/detail";
 import axios from "axios";
+import Cart from "./routes/cart";
 
 function App() {
   let [shoes, setshoes] = useState(data);
@@ -46,6 +47,14 @@ function App() {
               className="shop-link"
             >
               Detail
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigat("/cart");
+              }}
+              className="shop-link"
+            >
+              Cart
             </Nav.Link>
           </Nav>
         </Container>
@@ -115,6 +124,7 @@ function App() {
           <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>} />
           <Route path="two" element={<p>생일기념 쿠폰 받기</p>} />
         </Route>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
