@@ -30,7 +30,7 @@ function Cart() {
               <td>
                 <button
                   onClick={() => {
-                    dispatch(plus());
+                    dispatch(plus(state.data[i].id));
                   }}
                 >
                   +

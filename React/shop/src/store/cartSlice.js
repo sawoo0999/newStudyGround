@@ -7,11 +7,17 @@ let data = createSlice({
     { id: 2, name: "Grey Yordan", count: 1 },
   ],
   reducers: {
-    plus(state, a) {
-      state.count += 1;
+    plus(state, action) {
+      let newid = state.findIndex((a) => {
+        return a.id == action.payload;
+      });
+      state[newid].count += 1;
+    },
+    addItem(state, action) {
+      state.push(action.payload);
     },
   },
 });
 
-export let { plus } = data.actions;
+export let { plus, addItem } = data.actions;
 export default data;

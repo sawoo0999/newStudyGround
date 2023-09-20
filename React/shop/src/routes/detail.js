@@ -2,7 +2,8 @@ import { Alert } from "bootstrap";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-
+import { addItem } from "./../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 function Detail(props) {
   useEffect(() => {
     setTimeout(() => {
@@ -28,6 +29,7 @@ function Detail(props) {
   });
   let [tab, settab] = useState(0);
   let [fade, setfade] = useState("");
+  let dispatch = useDispatch();
   return (
     <div className="container">
       {alert1 == true ? (
@@ -41,7 +43,14 @@ function Detail(props) {
           <h4 className="pt-5">{newid.title}</h4>
           <p>{newid.content}</p>
           <p>{newid.price}원</p>
-          <button className="btn btn-danger">주문하기</button>
+          <button
+            className="btn btn-danger"
+            onClick={() =>
+              dispatch(addItem({ id: newid.id, name: newid.title, count: 1 }))
+            }
+          >
+            주문하기
+          </button>
         </div>
       </div>
       <Nav variant="tabs" defaultActiveKey="link0">
