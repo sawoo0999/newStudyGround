@@ -69,3 +69,12 @@
   opacity: 1;
   transition: all 1s;
 }
+
+.main-watch {
+  width: 20%;
+  margin-left: 80%;
+  height: 300px;
+  position: fixed;
+
+  background-color: #eee;
+}

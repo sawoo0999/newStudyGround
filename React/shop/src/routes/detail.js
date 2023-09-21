@@ -1,6 +1,6 @@
 import { Alert } from "bootstrap";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { lazy, useEffect, useState } from "react";
+import { json, useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { addItem } from "./../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,6 +30,13 @@ function Detail(props) {
   let [tab, settab] = useState(0);
   let [fade, setfade] = useState("");
   let dispatch = useDispatch();
+
+  useEffect(() => {
+    let change = JSON.parse(localStorage.getItem("watched"));
+    change.push({ id: newid.id, title: newid.title, price: newid.price });
+    const arr = [...new Set(change.map(JSON.stringify))].map(JSON.parse);
+    localStorage.setItem("watched", JSON.stringify(arr));
+  }, []);
   return (
     <div className="container">
       {alert1 == true ? (

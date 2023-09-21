@@ -5,13 +5,22 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import data from "./routes/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/detail";
 import axios from "axios";
 import Cart from "./routes/cart";
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("watched") == null) {
+      localStorage.setItem("watched", JSON.stringify([]));
+    }
+  }, []);
+  let [getshop, setshop] = useState(
+    JSON.parse(localStorage.getItem("watched"))
+  );
+  console.log(getshop);
   let [shoes, setshoes] = useState(data);
   let [img] = useState([
     "https://codingapple1.github.io/shop/shoes1.jpg",
@@ -65,7 +74,16 @@ function App() {
           path="/"
           element={
             <>
-              <div className="main-bg"></div>
+              <div className="main-bg">
+                <div className="main-watch">
+                  <div>최근 본 상품</div>
+                  {getshop == null
+                    ? ""
+                    : getshop.map((a, i) => {
+                        return <Watchshop getshop={getshop[i]} />;
+                      })}
+                </div>
+              </div>
               <div className="container">
                 <div className="row">
                   {shoes.map((a, i) => {
@@ -161,6 +179,15 @@ function Shoewshop(props) {
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content}</p>
       <p>가격 : {props.shoes.price}</p>
+    </div>
+  );
+}
+
+function Watchshop(props) {
+  return (
+    <div>
+      <h4>{props.getshop.title}</h4>
+      <p>{props.getshop.price}</p>
     </div>
   );
 }
