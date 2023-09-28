@@ -1,0 +1,61 @@
+body {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.id-container {
+  height: 100vh;
+}
+
+.id-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.id-iphone {
+  width: 40vh;
+  height: 60vh;
+  background-image: url("./Img/Iphone1.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.id-email {
+  width: 30vh;
+  height: 40vh;
+  background-color: white;
+  border: 1px solid rgb(180, 180, 180);
+}
+
+.id-logo {
+  margin-left: 25px;
+  width: 80%;
+  height: 80px;
+  background-image: url("./Img/instagram-logo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+input {
+  height: 30px;
+  margin-left: 45px;
+  margin-top: 20px;
+}
+
+.id-btn {
+  margin-top: 30px;
+  margin-left: 65px;
+  width: 130px;
+  height: 30px;
+  background-color: skyblue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.id-active {
+  background-color: rgb(92, 187, 224);
+}
