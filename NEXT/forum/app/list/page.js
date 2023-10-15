@@ -14,6 +14,7 @@ export default async function List() {
               <h4>{result[i].title}</h4>
             </Link>
             <div>{result[i].content}</div>
+            <Link href={`/edit/${result[i]._id}`}>수정</Link>
           </div>
         );
       })}

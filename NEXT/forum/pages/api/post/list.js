@@ -1,5 +1,5 @@
 import { connectDB } from "@/util/database";
-export default async function listhandler(요청, 응답) {
+export default async function handler(요청, 응답) {
   //   응답.status(200).json(result);
   if (요청.method == "POST") {
     if (요청.body.title == "") {
