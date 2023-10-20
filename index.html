@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header" role="banner">
+        <div id="topSearchWrap" class="header_inner">
+          <div id="special-logo" class="search_special_bg">
+            <div id="topAsideArea" class="menu_area">
+              <button
+                id="topAsideButton"
+                type="button"
+                class="btn_menu"
+                aria-haspopup="menu"
+                aria-expanded="false"
+              >
+                <span class="blind">확장 영역</span>
+              </button>
+              <div class="layer_box" aria-hidden="false">
+                <div class="box_content" style="display: none">
+                  <iframe
+                    src="https://m.naver.com/aside/?type=PC&from=https://www.naver.com/"
+                    title="확장영역"
+                    width="100%"
+                    height="100%"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
