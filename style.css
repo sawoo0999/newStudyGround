@@ -79,6 +79,18 @@ h6 {
   font-size: inherit;
   line-height: inherit;
 }
+li {
+  text-align: -webkit-match-parent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
 
 div {
   display: block;
@@ -464,4 +476,152 @@ input:focus {
 
 #header .header_inner .search_box .btn_keyboard:hover .keyboard_text {
   display: block;
+}
+
+#header .header_inner .shortcuts_area {
+  position: relative;
+  width: 676px;
+  margin: 72px auto 0;
+}
+
+#header .header_inner .short_list .link_service {
+  position: relative;
+  display: block;
+  width: 64px;
+}
+
+#header .header_inner .short_list .service_icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  display: block;
+  margin: 0px auto;
+}
+
+#header .header_inner .short_list .short_item {
+  float: left;
+}
+
+#header .header_inner .short_list .service_icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: 0px -128px;
+  background-repeat: no-repeat;
+  width: 54px;
+  height: 54px;
+}
+
+#header .header_inner .short_list .service_icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#header .header_inner .short_list .service_icon.type_mail::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -250px -91px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_cafe::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -250px 0px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_blog::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -201px -98px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_shopping::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -90px -209px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_news::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: 0px -209px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+#header .header_inner .short_list .service_icon.type_stock::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -180px -209px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_real::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -45px -209px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+#header .header_inner .short_list .service_icon.type_map::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -201px 0px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_webtoon::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -225px -209px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_icon.type_more::after {
+  background-image: url("Image/naver-img.png");
+  background-size: 434px 414px;
+  background-position: -250px -135px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+}
+
+#header .header_inner .short_list .service_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  margin-top: 10px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 13px;
 }

@@ -33,3 +33,11 @@ document.querySelector(".btn_notify").addEventListener("click", () => {
     divhidden[2].style.visibility = "hidden";
   }
 });
+
+document.querySelector(".type_more").addEventListener("click", () => {
+  let more = document.querySelector(".type_more");
+  if (more.classList.contains("type_more") == true) {
+    more.classList.replace("type_more", "type_close");
+    // 보류
+  }
+});
