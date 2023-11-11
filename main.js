@@ -229,3 +229,113 @@
 // let arr = [1, 2, 3];
 // arr.remove3();
 // console.log(arr);
+
+// let 부모 = { name: "Kim", age: 50 };
+
+// let 자식 = Object.create(부모);
+// 자식.age = 20;
+
+// let 손자 = Object.create(자식);
+
+// class 부모 {
+//   constructor(a) {
+//     this.name = a;
+//   }
+// }
+
+// let 자식 = new 부모("김");
+
+// class 할아버지 {
+//   constructor(name) {
+//     this.성 = "김";
+//     this.이름 = name;
+//   }
+// }
+
+// let 할아버지1 = new 할아버지("만덕");
+
+// class 아버지 extends 할아버지 {
+//   constructor(name) {
+//     super(name);
+//     this.나이 = 50;
+//   }
+// }
+
+// let 아버지1 = new 아버지("만수");
+
+// let 사람 = {
+//   name: "Park",
+//   age: 30,
+//   get nextAge() {   //return  필수
+//     return this.age + 1;
+//   },
+//   set setAge(a) {  //파라미터 1개가 있어야 가능 ,2개는 불가능
+//     this.age = parseInt(a);
+//   },
+// };
+
+class 강아지 {
+  constructor(종류, 색) {
+    this.type = 종류;
+    this.color = 색;
+  }
+  한살먹기() {
+    if (this.age != undefined) {
+      this.age += 1;
+    } else {
+      console.log("에러");
+    }
+  }
+}
+
+let 강아지1 = new 강아지("말티즈", "white");
+let 강아지2 = new 강아지("진돗개", "brown");
+
+class 고양이 extends 강아지 {
+  constructor(종류, 색, 나이) {
+    super(종류, 색);
+    this.age = 나이;
+  }
+}
+
+let 고양이1 = new 고양이("코숏", "white", 5);
+let 고양이2 = new 고양이("러시안블루", "brown", 2);
+
+class Unit {
+  constructor() {
+    this.str = 5;
+    this.hp = 100;
+  }
+  get battlePoint() {
+    return this.str + this.hp;
+  }
+  set heal(힐) {
+    this.hp = this.hp + 힐;
+  }
+}
+
+let 인스턴스 = new Unit();
+
+console.log(인스턴스.battlePoint);
+
+let data = {
+  odd: [],
+  even: [],
+
+  get getter함수() {
+    return console.log([...this.odd, ...this.even].sort());
+  },
+
+  setter함수(...rest) {
+    for (let i = 0; i < rest.length; i++) {
+      if (rest[i] % 2 != 0) {
+        this.odd.push(rest[i]);
+      } else {
+        this.even.push(rest[i]);
+      }
+    }
+  },
+};
+
+data.setter함수(1, 2, 3, 4, 5);
+data.getter함수;
