@@ -274,68 +274,170 @@
 //   },
 // };
 
-class 강아지 {
-  constructor(종류, 색) {
-    this.type = 종류;
-    this.color = 색;
-  }
-  한살먹기() {
-    if (this.age != undefined) {
-      this.age += 1;
-    } else {
-      console.log("에러");
-    }
-  }
-}
+// class 강아지 {
+//   constructor(종류, 색) {
+//     this.type = 종류;
+//     this.color = 색;
+//   }
+//   한살먹기() {
+//     if (this.age != undefined) {
+//       this.age += 1;
+//     } else {
+//       console.log("에러");
+//     }
+//   }
+// }
 
-let 강아지1 = new 강아지("말티즈", "white");
-let 강아지2 = new 강아지("진돗개", "brown");
+// let 강아지1 = new 강아지("말티즈", "white");
+// let 강아지2 = new 강아지("진돗개", "brown");
 
-class 고양이 extends 강아지 {
-  constructor(종류, 색, 나이) {
-    super(종류, 색);
-    this.age = 나이;
-  }
-}
+// class 고양이 extends 강아지 {
+//   constructor(종류, 색, 나이) {
+//     super(종류, 색);
+//     this.age = 나이;
+//   }
+// }
 
-let 고양이1 = new 고양이("코숏", "white", 5);
-let 고양이2 = new 고양이("러시안블루", "brown", 2);
+// let 고양이1 = new 고양이("코숏", "white", 5);
+// let 고양이2 = new 고양이("러시안블루", "brown", 2);
 
-class Unit {
-  constructor() {
-    this.str = 5;
-    this.hp = 100;
-  }
-  get battlePoint() {
-    return this.str + this.hp;
-  }
-  set heal(힐) {
-    this.hp = this.hp + 힐;
-  }
-}
+// class Unit {
+//   constructor() {
+//     this.str = 5;
+//     this.hp = 100;
+//   }
+//   get battlePoint() {
+//     return this.str + this.hp;
+//   }
+//   set heal(힐) {
+//     this.hp = this.hp + 힐;
+//   }
+// }
 
-let 인스턴스 = new Unit();
+// let 인스턴스 = new Unit();
 
-console.log(인스턴스.battlePoint);
+// console.log(인스턴스.battlePoint);
 
-let data = {
-  odd: [],
-  even: [],
+// let data = {
+//   odd: [],
+//   even: [],
 
-  get getter함수() {
-    return console.log([...this.odd, ...this.even].sort());
-  },
+//   get getter함수() {
+//     return console.log([...this.odd, ...this.even].sort());
+//   },
 
-  setter함수(...rest) {
-    for (let i = 0; i < rest.length; i++) {
-      if (rest[i] % 2 != 0) {
-        this.odd.push(rest[i]);
-      } else {
-        this.even.push(rest[i]);
-      }
-    }
-  },
-};
+//   setter함수(...rest) {
+//     for (let i = 0; i < rest.length; i++) {
+//       if (rest[i] % 2 != 0) {
+//         this.odd.push(rest[i]);
+//       } else {
+//         this.even.push(rest[i]);
+//       }
+//     }
+//   },
+// };
 
-data.setter함수(1, 2, 3, 4, 5);
-data.getter함수;
+// data.setter함수(1, 2, 3, 4, 5);
+// data.getter함수;
+
+// let arr = [2, 3, 4];
+// let [a, b, c = 10] = [2, 3];
+
+//  let obj = { name: "Kim", age: 24 };
+// let { name: 이름 = 'lee', age } = { name: "Kim", age: 24 };
+
+// let name = "Lee";
+// let age = 30;
+
+// let obj = { name: "Kim", age: 24 };
+
+// function 함수([name, age]) {
+//   console.log(name, age);
+// }
+
+// 함수([1, 2]);
+
+// let 신체정보 = {
+//   body: {
+//     height: 190,
+//     weight: 70,
+//   },
+//   size: ["상의 Large", "바지 30인치"],
+// };
+
+// let {
+//   body: { height: 키, weight: 몸무게 },
+//   size: [상의사이즈, 하의사이즈],
+// } = 신체정보;
+
+// let a = 10;
+// let b = 20;
+// let c = 30;
+// export { a, b };
+// export default c;
+
+// function 첫째함수(a) {
+//   console.log(1);
+//   a();
+// }
+
+// function 둘째함수() {
+//   console.log(2);
+// }
+
+// 첫째함수(둘째함수);
+
+// let 프로미스 = new Promise(function (resolve, reject) {
+//   setTimeout(() => {
+//     resolve();
+//   }, 5000);
+// });
+
+// 프로미스
+//   .then(function () {
+//     console.log("성공");
+//   })
+//   .catch(function () {
+//     console.log("실패");
+//   });
+
+// let 프로미스 = new Promise(function (resolve, reject) {
+//   document.querySelector("#test").addEventListener("load", function () {
+//     resolve();
+//   });
+//   document.querySelector("#test").addEventListener("error", function () {
+//     reject();
+//   });
+// });
+
+// 프로미스
+//   .then(function () {
+//     console.log("성공");
+//   })
+//   .catch(function () {
+//     console.log("ERROR");
+//   });
+
+let Ajax = new Promise(function (resolve, reject) {
+  $.ajax({
+    type: "GET",
+    url: "https://codingapple1.github.io/hello.txt",
+  }).done(function (결과) {
+    resolve(결과);
+  });
+});
+
+Ajax.then(function (a) {
+  console.log(a);
+  let Ajax2 = new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "GET",
+      url: "https://codingapple1.github.io/hello2.txt",
+    }).done(function (결과) {
+      resolve(결과);
+    });
+  });
+  return Ajax2;
+}).then(function (a) {
+  console.log(a);
+});
