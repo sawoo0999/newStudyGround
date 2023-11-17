@@ -418,26 +418,62 @@
 //     console.log("ERROR");
 //   });
 
-let Ajax = new Promise(function (resolve, reject) {
-  $.ajax({
-    type: "GET",
-    url: "https://codingapple1.github.io/hello.txt",
-  }).done(function (결과) {
-    resolve(결과);
-  });
-});
+// let Ajax = new Promise(function (resolve, reject) {
+//   $.ajax({
+//     type: "GET",
+//     url: "https://codingapple1.github.io/hello.txt",
+//   }).done(function (결과) {
+//     resolve(결과);
+//   });
+// });
 
-Ajax.then(function (a) {
-  console.log(a);
-  let Ajax2 = new Promise(function (resolve, reject) {
-    $.ajax({
-      type: "GET",
-      url: "https://codingapple1.github.io/hello2.txt",
-    }).done(function (결과) {
-      resolve(결과);
+// Ajax.then(function (a) {
+//   console.log(a);
+//   let Ajax2 = new Promise(function (resolve, reject) {
+//     $.ajax({
+//       type: "GET",
+//       url: "https://codingapple1.github.io/hello2.txt",
+//     }).done(function (결과) {
+//       resolve(결과);
+//     });
+//   });
+//   return Ajax2;
+// }).then(function (a) {
+//   console.log(a);
+// });
+
+// async function 더하기() {
+//   let 프로미스 = new Promise(function (성공, 실패) {
+//     let 연산 = 1 + 1;
+//     실패();
+//   });
+//   try {
+//     let 결과 = await 프로미스;
+//     console.log(결과);
+//   } catch {
+//     console.log("실패1");
+//   }
+// }
+
+// 더하기();
+
+// 더하기().then(function (a) {
+//   console.log(a);
+// });
+
+async function 더하기() {
+  let 프로미스 = new Promise(function (resolve, reject) {
+    document.querySelector("#test1").addEventListener("click", () => {
+      resolve("성공했어요");
     });
   });
-  return Ajax2;
-}).then(function (a) {
-  console.log(a);
-});
+
+  try {
+    let 클릭 = await 프로미스;
+    console.log(클릭);
+  } catch {
+    console.log("실패입니다.");
+  }
+}
+
+더하기();
