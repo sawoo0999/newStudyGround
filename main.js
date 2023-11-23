@@ -461,19 +461,56 @@
 //   console.log(a);
 // });
 
-async function 더하기() {
-  let 프로미스 = new Promise(function (resolve, reject) {
-    document.querySelector("#test1").addEventListener("click", () => {
-      resolve("성공했어요");
-    });
-  });
+// async function 더하기() {
+//   let 프로미스 = new Promise(function (resolve, reject) {
+//     document.querySelector("#test1").addEventListener("click", () => {
+//       resolve("성공했어요");
+//     });
+//   });
 
-  try {
-    let 클릭 = await 프로미스;
-    console.log(클릭);
-  } catch {
-    console.log("실패입니다.");
-  }
-}
+//   try {
+//     let 클릭 = await 프로미스;
+//     console.log(클릭);
+//   } catch {
+//     console.log("실패입니다.");
+//   }
+// }
 
-더하기();
+// 더하기();
+
+// let obj = { name: "Kim", age: 30 };
+
+// class 부모 {}
+// 부모.prototype.name = "Park";
+
+// let obj = new 부모();
+
+// for (let key in obj) {
+//   console.log(obj[key]);
+// }
+
+// let arr = [2, 3, 4, 5];
+
+// for (let key of arr) {
+//   console.log(key);
+// }
+
+// let person = new Map();
+// person.set("name", "Lee");
+// person.set("age", 20);
+
+// person.get("name");
+// person.size;
+
+// class 클래스 extends HTMLElement {
+//   connectedCallback() {
+//     let 변수 = document.createElement("label");
+//     this.appendChild(변수);
+//     this.innerHTML = `<lable>이메일인풋입니다.</label><input>`;
+//   }
+// }
+
+// customElements.define("custom-input", 클래스);
+
+document.querySelector("#mordor").attachShadow({ mode: "open" });
+document.querySelector("#mordor").shadowRoot.innerHTML = `<p>심연</p>`;
