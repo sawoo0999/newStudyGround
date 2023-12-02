@@ -5,3 +5,15 @@
 img 태그가 꾸며주는 느낌 이면 css로 이미지 표시
 aria-labal="오늘의 책 선정"  //태그에 부가 설명 느낌
 aria-hidden="true/false" //중요하지 않은 부분 가리는 느낌
+
+키워드 느낌은 
+<dl>
+	<div>
+		<dt>Post</dt>
+		<dd>112</dd>
+	</div>
+</dl>
+
+list
+순서 중요 <ol>
+순서 상관없음 <ul>
