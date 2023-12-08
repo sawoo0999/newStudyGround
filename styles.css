@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.wrap {
+  background: #eee;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 80px;
+}
+
+.sr-only {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.nav-bar {
+  position: relative;
+  width: 200px;
+  padding: 10px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  font-weight: bold;
+  background: rgb(194, 231, 247);
+  border-radius: 10px;
+}
+
+.menu li {
+  margin-top: 20px;
+}
+
+.menu button {
+  border: none;
+}
+
+.menu i {
+  width: 18px;
+  margin-right: 5px;
+}
+
+.btn-tweet {
+  background: rgb(0, 172, 240);
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+  border-radius: 50px;
+  color: white;
+}
+
+main {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.main-header {
+  display: flex;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid rgb(209, 206, 206);
+  border-radius: 5px;
+}
+.tweet {
+  padding: 10px;
+  border: 1px solid rgb(209, 206, 206);
+  border-radius: 5px;
+  box-shadow: 0 4px 4px -4px black;
+}
+
+.tweet img {
+  width: 33px;
+  height: 33px;
+  border-radius: 30px;
+}
+.tweet textarea {
+  border: none;
+  background: none;
+  resize: none;
+  height: 25px;
+  width: 80%;
+}
+
+.tweet-icon {
+  display: flex;
+}
+
+.tweet-btn {
+  width: 60%;
+  margin-left: 30px;
+  padding: 5px;
+}
+
+.tweet-btn i {
+  font-size: 15px;
+  margin-right: 10px;
+  color: rgb(18, 166, 224);
+}
+
+.tweet-input {
+  background: rgb(0, 172, 240);
+  width: 63px;
+  height: 25px;
+  border-radius: 50px;
+  color: white;
+}
+
+.main-content {
+  padding: 5px;
+  border: 1px solid rgb(209, 206, 206);
+  border-radius: 5px;
+}
+
+.content img {
+  width: 33px;
+  height: 33px;
+  border-radius: 30px;
+}
+.comment {
+  padding: 1px;
+  margin-left: 40px;
+}
+
+.content-header {
+  display: flex;
+}
+
+.content-header dl {
+  display: flex;
+}
+.content-header a {
+  margin-right: 10px;
+}
+
+.btn-bottom button {
+  width: 24%;
+}
+
+.content .comment img {
+  width: 100%;
+  height: 400px;
+}
+
+.main-content li {
+  margin-top: 50px;
+}
