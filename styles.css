@@ -68,6 +68,7 @@ a {
 .menu i {
   width: 18px;
   margin-right: 5px;
+  text-align: center;
 }
 
 .btn-tweet {
@@ -173,4 +174,49 @@ main {
 
 .main-content li {
   margin-top: 50px;
+}
+
+aside {
+  background: rgb(213, 212, 230);
+  border-radius: 5px;
+  height: 520px;
+}
+
+aside header {
+  display: flex;
+}
+
+aside header h1 {
+  width: 90%;
+}
+
+aside header i {
+  color: rgb(18, 166, 224);
+  font-size: 18px;
+}
+
+aside li {
+  border-top: 1px solid rgb(179, 179, 179);
+}
+
+aside li span {
+  color: rgb(102, 102, 102);
+}
+
+.show-btn {
+  width: 100%;
+  color: rgb(18, 166, 224);
+  font-size: 15px;
+  padding: 10px;
+  text-align: left;
+  border-top: 1px solid rgb(179, 179, 179);
+}
+
+footer {
+  width: 70%;
+  margin-top: 30px;
+}
+
+footer a {
+  margin-right: 25px;
 }
