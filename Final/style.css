@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+}
+
 button,
 input,
 textarea {
@@ -45,6 +49,161 @@ p {
   color: #2b292d;
 }
 
+.fill-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 48px;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  border-radius: 2px;
+  background-color: #3040c4;
+  color: #ffffff;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fill-btn.inverted {
+  background-color: #ffffff;
+  color: #3040c4;
+}
+
+.fill-btn:hover {
+  opacity: 0.5;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-category {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  margin-bottom: 24px;
+  font-size: 34px;
+  line-height: 1.0588235294;
+  letter-spacing: -0.03em;
+  color: #2b292d;
+}
+
+/* Landing */
+.landing {
+  text-align: center;
+  background-color: #fdded8;
+}
+
+.landing-title {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: #2b292d;
+  margin-bottom: 24px;
+}
+.landing-desc {
+  margin-bottom: 24px;
+}
+
+.landing .btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing .btn-group .fill-btn:first-child {
+  margin-right: 8px;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Service */
+.service {
+  text-align: left;
+  background-color: #f4f5f7;
+  padding: 80px 0;
+}
+
+.service-title {
+  font-size: 22px;
+  line-height: 1.3636363637;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #2b292d;
+  margin-bottom: 16px;
+}
+
+.service .col-12:first-child {
+  margin-bottom: 40px;
+}
+
+/* Program */
+
+.program .row:first-child {
+  margin-bottom: 32px;
+}
+
+.program header {
+  text-align: left;
+}
+
+.program .col-md-4 {
+  margin-bottom: 20px;
+}
+
+.program .col-md-4:last-child {
+  margin-bottom: 0;
+}
+
+.program .section-category {
+  color: #009b4d;
+}
+
+.program-card {
+  display: block;
+  padding: 24px 0 32px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.05),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(255, 255, 255, 0.1) inset;
+  transition: background-color 300ms ease-in-out, box-shadow 300ms ease-in-out,
+    color 500ms ease-in-out;
+}
+
+.program-card img {
+  display: block;
+  width: auto;
+  height: 195px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+.program-card strong {
+  font-size: 18px;
+  line-height: 1.33333333;
+  letter-spacing: -0.02em;
+}
+
+.program-card:hover {
+  background-color: #3141c5;
+  box-shadow: 0px 11px 55px 0px rgba(0, 0, 0, 0.07),
+    0px 13px 18px 0px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
 /* >768px  */
 
 @media screen and (min-width: 768px) {
@@ -52,6 +211,77 @@ p {
   p {
     font-size: 22px;
     line-height: 1.36363636;
+  }
+
+  .fill-btn {
+    width: 160px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 1.55555556;
+  }
+
+  .section-category {
+    font-size: 22px;
+    line-height: 1.0909090909;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+
+  .section {
+    padding-bottom: 96px;
+  }
+
+  /* Landing */
+  .landing-title {
+    font-size: 70px;
+    line-height: 1.02857143;
+  }
+
+  .landing-title,
+  .landing-desc {
+    margin-bottom: 32px;
+  }
+
+  .landing .btn-group .fill-btn:first-child {
+    margin-right: 16px;
+  }
+
+  .landing-content {
+    height: auto;
+    padding: 120px 0;
+  }
+
+  /* Service */
+  .service-title {
+    font-size: 26px;
+    line-height: 1.30769231;
+  }
+
+  .service .col-12:first-child {
+    margin-bottom: 0;
+  }
+
+  /* Program */
+
+  .program header {
+    text-align: center;
+  }
+
+  .program .row:first-child {
+    margin-bottom: 72px;
+  }
+
+  .program-card strong {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .program-card img {
+    margin-bottom: 24px;
   }
 }
 
