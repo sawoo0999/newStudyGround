@@ -288,6 +288,27 @@ p {
   color: #3040c4;
 }
 
+/* Footer */
+
+.footer {
+  padding: 24px 0;
+}
+
+.footer-link {
+  margin-bottom: 8px;
+}
+
+.footer-link:last-child {
+  margin-bottom: 0;
+}
+
+.footer-link a {
+  color: #807f81;
+  font-size: 14px;
+  line-height: 1.71428571;
+  letter-spacing: -0.01em;
+}
+
 /* >768px  */
 
 @media screen and (min-width: 768px) {
@@ -439,6 +460,26 @@ p {
   .subscription-form .form-notice {
     font-size: 14px;
     line-height: 1.7142857143;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 16px 0;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-link {
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+
+  .footer-link:last-child {
+    margin-right: 0;
   }
 }
 
