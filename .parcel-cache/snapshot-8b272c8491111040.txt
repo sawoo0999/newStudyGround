@@ -11,7 +11,7 @@
 66C:\Program Files\18-forkify\node_modules\lines-and-columns\LICENSE133603281997422396 0
 78C:\Program Files\18-forkify\node_modules\caniuse-lite\data\features\css-all.js133603282005554526 0
 82C:\Program Files\18-forkify\node_modules\core-js\actual\typed-array\int32-array.js133603351439641658 0
-32C:\Program Files\18-forkify\dist133627569984893319 1
+32C:\Program Files\18-forkify\dist133627572128531478 1
 39C:\Program Files\18-forkify\.prettierrc133494242726657676 0
 87C:\Program Files\18-forkify\node_modules\csso\node_modules\css-tree\lib\utils\string.js133603282006732918 0
 67C:\Program Files\18-forkify\node_modules\@trysound\sax\package.json133603281998282161 0
@@ -241,7 +241,7 @@
 84C:\Program Files\18-forkify\node_modules\caniuse-lite\data\features\web-animation.js133603282010518591 0
 82C:\Program Files\18-forkify\node_modules\@parcel\packager-html\lib\HTMLPackager.js133603281997872539 0
 63C:\Program Files\18-forkify\node_modules\parent-module\index.js133603281997734624 0
-48C:\Program Files\18-forkify\src\js\controller.js133627569983794818 0
+48C:\Program Files\18-forkify\src\js\controller.js133627572133162847 0
 73C:\Program Files\18-forkify\node_modules\core-js\full\string\fontcolor.js133603351432972294 0
 70C:\Program Files\18-forkify\node_modules\svgo\plugins\removeViewBox.js133603282004737753 0
 73C:\Program Files\18-forkify\node_modules\css-what\lib\commonjs\index.d.ts133603282001508330 0
@@ -9705,5 +9705,5 @@
 43C:\Program Files\18-forkify\dist\index.html133627526725854948 0
 51C:\Program Files\18-forkify\dist\icons.dfd7a6db.svg133627565849038622 0
 51C:\Program Files\18-forkify\dist\icons.21bad73c.svg133627565848994258 0
-50C:\Program Files\18-forkify\dist\index.e37f48ea.js133627569984863686 0
-54C:\Program Files\18-forkify\dist\index.e37f48ea.js.map133627569984893319 0
+50C:\Program Files\18-forkify\dist\index.e37f48ea.js133627572128479583 0
+54C:\Program Files\18-forkify\dist\index.e37f48ea.js.map133627572128531478 0

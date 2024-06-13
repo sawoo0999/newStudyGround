@@ -122,5 +122,4 @@ init();
 //bookmark 초기화
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
-  console.log(2);
 };

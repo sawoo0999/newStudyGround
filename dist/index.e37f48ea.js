@@ -690,7 +690,6 @@ init();
 //bookmark 초기화
 const clearBookmarks = function() {
     localStorage.clear("bookmarks");
-    console.log(2);
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model":"Y4A21","./views/recipeView":"l60JC","./views/searchView":"9OQAM","./views/resultsView":"cSbZE","./views/paginationView":"6z7bi","./views/bookmarksView":"4Lqzq"}],"gkKU3":[function(require,module,exports) {
