@@ -4,6 +4,13 @@ import icons from 'url:../../img/icons.svg';
 export default class View {
   _data;
 
+  /**
+   * DOM에서 받은 오브젝트를 표시
+   * @param {Object | Object[]} data  렌더된 데이터 (e.g. recipe)
+   * @param {boolean} [render= true ] 만약 false 면 markup으로 반환
+   * @returns
+   */
+
   //data 맞는값 표시
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))

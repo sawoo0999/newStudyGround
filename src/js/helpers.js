@@ -8,11 +8,19 @@ const timeout = function (s) {
   });
 };
 
-export const getJSON = async function (url) {
+//최적화
+export const AJAX = async function (url, uploadData = undefined) {
   try {
-    //10초동안 전달이 안되면 에러
+    const fetchPro = uploadData
+      ? fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(uploadData),
+        })
+      : fetch(url);
 
-    const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
+    //10초동안 전달이 안되면 에러
+    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const data = await res.json();
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
@@ -20,3 +28,35 @@ export const getJSON = async function (url) {
     throw err;
   }
 };
+
+// 초기 단계
+// export const getJSON = async function (url) {
+//   try {
+//     //10초동안 전달이 안되면 에러
+//     const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
+//     const data = await res.json();
+//     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+//     return data;
+//   } catch (err) {
+//     throw err;
+//   }
+// };
+
+// export const sendJSON = async function (url, uploadData) {
+//   try {
+//     //10초동안 전달이 안되면 에러
+//     const res = await Promise.race([
+//       fetch(url, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(uploadData),
+//       }),
+//       timeout(TIMEOUT_SEC),
+//     ]);
+//     const data = await res.json();
+//     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+//     return data;
+//   } catch (err) {
+//     throw err;
+//   }
+// };

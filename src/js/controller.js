@@ -6,7 +6,8 @@ import paginationView from './views/paginationView';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import bookmarksView from './views/bookmarksView';
-
+import addRecipeView from './views/addRecipeView';
+import { MODAL_CLOSE_SEC } from './config';
 // if (module.hot) {
 //   module.hot.accept();
 // }
@@ -108,6 +109,37 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+//레시피 직접 생성
+const controlAddRceip = async function (newRecipe) {
+  try {
+    //로딩 스피너
+    addRecipeView.renderSpinner();
+
+    //새로운 레시피 데이터 업로드
+    await model.uploadRecipe(newRecipe);
+    console.log(model.state.recipe);
+    //만든 레시피 바로 렌더
+    recipeView.render(model.state.recipe);
+
+    // 업로드 성공 메세지
+    addRecipeView.renderMessage();
+
+    // 북마크 재 렌더
+    bookmarksView.render(model.state.bookmarks);
+
+    //Change  URL in id
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    //레시피 등록창 닫기
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error('💣', err);
+    addRecipeView.renderError(err.message);
+  }
+};
+
 //이벤트 리스너 종합
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -116,11 +148,11 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRceip);
 };
 init();
 
 //bookmark 초기화
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
-  console.log(123);
 };
