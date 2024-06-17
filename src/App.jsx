@@ -4,7 +4,7 @@ import Player from "./components/Player";
 
 function App() {
   const [activePlayer, setActivePlayer] = useState("X");
-
+  let test;
   function handleSelectSquare() {
     setActivePlayer((curActivePlayer) => (curActivePlayer === "X" ? "O" : "X"));
   }
