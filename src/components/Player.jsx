@@ -1,5 +1,10 @@
 import { useState } from "react";
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({
+  initialName,
+  symbol,
+  isActive,
+  onChangeName,
+}) {
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
   function handleEditClick() {
@@ -9,6 +14,7 @@ export default function Player({ initialName, symbol, isActive }) {
     //setIsEditing(!isEditing) false -> true
     //setIsEditing((editing) => !editing); false -> true
     //setIsEditing((editing) => !editing); true -> false
+    if (isEditing) onChangeName(symbol, playerName); //Save 버튼 누르면  변경된 이름 전달
   }
 
   //input value가 변경될때 마다 setPlayerName에 value 값 반환
