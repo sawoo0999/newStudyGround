@@ -2,7 +2,7 @@
 const  CartContext = createContext({items:[]}) //초기설정
 
 //App
-<CartContext.Provider value={items}>
+<CartContext.Provider value={shoppingCart}>
   <Header/>
   <Shop/>
 </CartContext.Provider >
