@@ -7,6 +7,7 @@ addToItemCart: ()=>{}
 ) //초기설정
 
 //App
+
 //State 랑 이벤트함수 가져와서 변수에 넣기
 const ctxValue = {
 items: shoppingCart.items,
