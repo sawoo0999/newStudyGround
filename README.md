@@ -5,6 +5,7 @@ memo()
 const Counter = Memo(function Counter({props}){})
 
 *주의*
+
 모든컨포넌트에 memo를 사용하는건 적합하지 않다 
 
 왠만하면 재실행 방지할려고 컨포넌트의 최상위에 사용
