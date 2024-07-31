@@ -4,6 +4,7 @@ import CartContext from "../store/CartContext";
 import { currencyFormatter } from "../util/formatting";
 import UserProgressContext from "../store/UserProgressContext";
 import CartItem from "./CartItem";
+import { createPortal } from "react-dom";
 
 export default function Cart() {
   const carCtx = useContext(CartContext);
@@ -17,8 +18,16 @@ export default function Cart() {
     processCtx.hideCart();
   }
 
-  return (
-    <Modal className="cart" open={processCtx.progress === "cart"}>
+  function handleOpenCart() {
+    processCtx.showCheckout();
+  }
+
+  return createPortal(
+    <Modal
+      className="cart"
+      open={processCtx.progress === "cart"}
+      onClose={processCtx.progress === "cart" ? handleCloseCart : null}
+    >
       <h2>Your Cart</h2>
       <ul>
         {carCtx.items.map((cart) => (
@@ -35,10 +44,13 @@ export default function Cart() {
         <button className="text-button" onClick={handleCloseCart}>
           Close
         </button>
-        <button className="button" onClick={processCtx.showCheckout}>
-          Go to Check
-        </button>
+        {carCtx.items.length > 0 && (
+          <button className="button" onClick={handleOpenCart}>
+            Go to Check
+          </button>
+        )}
       </p>
-    </Modal>
+    </Modal>,
+    document.getElementById("modal")
   );
 }
