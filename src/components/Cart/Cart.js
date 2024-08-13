@@ -5,12 +5,12 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
+
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
-        {cartItems.length === 0 && <p>No Quantity </p>}
+        {cartItems.length === 0 && <p>No Cart Item !</p>}
         {cartItems.map((item) => (
           <CartItem
             key={item.itemId}
