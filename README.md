@@ -35,3 +35,16 @@ const navigate = useNavigate();
 
 navigate('/products')
 
+3. params
+ 동적인 라우터
+
+app.js
+{ path: "/products/:productId", element: <ProductDetailPage /> },
+
+productDetail.js
+
+const params = useParams();
+
+<p>{params.productId}</p>
+
+
