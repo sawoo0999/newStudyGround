@@ -145,4 +145,41 @@ export const sendCartData = (cart) => {
 //   };
 // };
 
+비동기 데이터 불러오기
+
+export const getCartData = () => {
+//   return async (dispatch) => {
+//     const fetchData = async () => {
+//       const res = await fetch(
+//         "https://test-mode-eb497-default-rtdb.firebaseio.com/cart.json"
+//       );
+
+//       if (!res.ok) {
+//         throw new Error("Get cart data failed.");
+//       }
+
+//       const data = await res.json();
+//       return data;
+//     };
+
+//     try {
+//       const cartData = await fetchData();
+//       dispatch(
+//         cartActions.replaceCart({
+//           items: cartData.items || [],
+//           totalQuantity: cartData.totalQuantity,
+//         })
+//       );
+//     } catch (err) {
+//       dispatch(
+//         uiActions.showNotification({
+//           status: "error",
+//           title: "Error!",
+//           message: "Sending cart data failed!",
+//         })
+//       );
+//     }
+//   };
+// };
+
   
