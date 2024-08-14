@@ -48,3 +48,17 @@ const params = useParams();
 <p>{params.productId}</p>
 
 
+
+4. relative
+relative는 기본값은 route로 되있고 path 로 변경가능
+path : 현재 주소에 세그먼트 제거 형제요소 주소로 이동 시킴
+route: 현재 주소에 형제요소 세그먼트를 다지움 부모요소 주소로 이동
+<Link to='..' relative='route'>
+
+path 사용시
+before : http://localhost:3000/products/p1
+after : http://localhost:3000/products
+
+route 사용시
+before : http://localhost:3000/products/p1
+after : http://localhost:3000
