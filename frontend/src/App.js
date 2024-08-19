@@ -43,16 +43,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import HomePage from "./pages/HomePage";
-import EventsPage from "./pages/Events";
-import EventDetailPage from "./pages/EventDetail";
+import EventDetailPage, { loader as itemLoader } from "./pages/EventDetail";
+import EventsPage, { loader as eventLoader } from "./pages/Events";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import EventLayout from "./pages/EventLayout";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
@@ -60,22 +62,20 @@ const router = createBrowserRouter([
         element: <EventLayout />,
         children: [
           {
-            path: "",
+            index: true,
             element: <EventsPage />,
-            loader: async () => {
-              const response = await fetch("http://localhost:8080/events");
-
-              if (!response.ok) {
-                throw new Error("Failed");
-              } else {
-                const resData = await response.json();
-                return resData.events;
-              }
-            },
+            loader: eventLoader,
           },
-          { path: ":id", element: <EventDetailPage /> },
+          {
+            path: ":id",
+            id: "event-detail",
+            loader: itemLoader,
+            children: [
+              { index: true, element: <EventDetailPage /> },
+              { path: "edit", element: <EditEventPage /> },
+            ],
+          },
           { path: "new", element: <NewEventPage /> },
-          { path: ":id/edit", element: <EditEventPage /> },
         ],
       },
     ],
