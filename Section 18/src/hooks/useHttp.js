@@ -20,6 +20,7 @@ export default function useHttp(url, config, initialData) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
+  //Clear
   function clearData() {
     setData(initialData);
   }
