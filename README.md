@@ -32,3 +32,10 @@ loader 함수 안에서는 JS 코드 모든 API 사용 가능하지만 useState 
     title = "Not found!";
     message = "Could not find resource or page.";
   }
+
+  간소화 하기 
+  react-router-dom 에 있는 json 사용하면 요약 가능
+  throw json({ message: "Could not fetch events." }, { status: 500 });
+
+  Error.js
+   message = error.data.message;
