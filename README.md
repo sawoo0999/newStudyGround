@@ -39,3 +39,32 @@ loader 함수 안에서는 JS 코드 모든 API 사용 가능하지만 useState 
 
   Error.js
    message = error.data.message;
+
+
+3.action
+fetch에서 post 할때 사용
+export async function action({ request, params }) {
+const data = request.formData()
+const eventData = {title: data.get('title}
+}
+
+redirect를 하면 패치 마무리후 지정 경로로 이동
+return redirect("/events");
+
+
+useSubmit 으로 delete 메소드 사용하기
+
+  EventItem.js
+ const submit = useSubmit();
+ submit(null, { method: "delete" });
+
+  현재위치 id를 불러와서 요청하는 method를 실행
+  EventDetail.js
+    const id = params.id;
+    const res = await fetch("http://localhost:8080/events/" + id, {
+    method: request.method,
+  });
+ 
+
+
+   
