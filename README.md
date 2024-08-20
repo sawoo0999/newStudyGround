@@ -39,3 +39,17 @@ loader 함수 안에서는 JS 코드 모든 API 사용 가능하지만 useState 
 
   Error.js
    message = error.data.message;
+
+
+3.action
+fetch에서 post 할때 사용
+export async function action({ request, params }) {
+const data = request.formData()
+const eventData = {title: data.get('title}
+}
+
+
+
+
+
+   
