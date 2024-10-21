@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+        <form>
+            <input type="text" id="369" />
+            <input type="text" id="pass" />
+        </form>
+
+        <span class="badge bg-dark" id="dark">Dark 🔄</span>
+
+        <div class="alert alert-danger">
+            <span id="countdown">5</span>초 이내 구매시 사은품 증정!
+        </div>
+
+        <script>
+            // setTimeout(function () {
+            //     $('.alert').hide();
+            // }, 5000);
+            // setInterval(function () {
+            //     alert('안녕');
+            // }, 5000);
+
+            var 타이머 = 5;
+            var showtime = setInterval(function () {
+                타이머 -= 1;
+                if (타이머 >= 0) {
+                    document.querySelector('#countdown').innerHTML = 타이머;
+                }
+                if (타이머 == 0) {
+                    $('.alert').hide();
+                }
+            }, 1000);
+        </script>
+
+        <script>
+            var count = 0;
+
+            $('.badge').on('click', function () {
+                count += 1;
+                if (count % 2 == 1) {
+                    $('.badge').html('Light 🔄');
+                } else {
+                    $('.badge').html('Dark 🔄');
+                }
+            });
+        </script>
+
+        <script>
+            $('#369').on('change', function () {
+                if ($('#369').val() % 3 == 0) {
+                    if ($('#369').val() % 9 == 0) {
+                        alert('짝x2');
+                    } else {
+                        alert('짝');
+                    }
+                } else {
+                    alert('통과');
+                }
+            });
+        </script>
+
+        <script>
+            function pass(a, b) {
+                if (a > 100 || b > 100 || a < 0 || b < 0) {
+                    document.write('장난치지마세요');
+                } else if (a + b >= 120 && a >= 40 && b >= 40) {
+                    document.write('합격');
+                } else {
+                    document.write('불합격');
+                }
+            }
+            pass(80, 40);
+        </script>
+
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>

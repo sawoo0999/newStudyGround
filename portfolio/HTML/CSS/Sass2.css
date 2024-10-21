@@ -1,0 +1,88 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+div,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+ul .active {
+  width: 50%;
+  height: 20px;
+  border: 1px solid gray;
+  padding: 20px;
+  margin: auto;
+}
+ul .active:hover {
+  background-color: rgb(52, 116, 255);
+  color: white;
+}
+
+.main-green {
+  width: 50%;
+  height: 20px;
+  padding: 20px;
+  background-color: rgb(126, 243, 126);
+  border: none;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.main-blue {
+  width: 50%;
+  height: 20px;
+  padding: 20px;
+  background-color: rgb(89, 139, 248);
+  border: none;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.main-yellow {
+  width: 50%;
+  height: 20px;
+  padding: 20px;
+  background-color: rgb(248, 208, 96);
+  border: none;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+span {
+  font-weight: bolder;
+}
+
+.row .col-6 {
+  float: left;
+  width: 50%;
+  height: 40px;
+  padding: 8px;
+  background: rgb(165, 165, 165);
+  border: 0.5px solid gray;
+  margin-top: 10px;
+}
+.row .col-4 {
+  float: left;
+  width: 33.3%;
+  height: 40px;
+  padding: 8px;
+  background: rgb(165, 165, 165);
+  border: 0.5px solid gray;
+  margin-top: 10px;
+}
+.row .col-3 {
+  float: left;
+  width: 25%;
+  height: 40px;
+  padding: 8px;
+  background: rgb(165, 165, 165);
+  border: 0.5px solid gray;
+  margin-top: 10px;
+}/*# sourceMappingURL=Sass2.css.map */

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+
+        <div class="black-bg">
+            <div class="white-bg">
+                <h4>로그인하세요</h4>
+                <form action="success.html">
+                    <div class="my-3">
+                        <input type="text" class="form-control" id="id" />
+                    </div>
+                    <div class="my-3">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary">전송</button>
+                    <button type="button" class="btn btn-danger" id="close">
+                        닫기
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            $('.btn-primary').on('click', function (e) {
+                var email = $('#id').val();
+                var password = $('#password').val();
+                if (
+                    email == '' ||
+                    password == '' ||
+                    /\S+@\S+.\S+/.test(email) == false
+                ) {
+                    alert(
+                        '공백 없이 입력해주세요 또는 이메일형식으로 입력해주세요',
+                    );
+                    e.preventDefault();
+                    return false;
+                } else if (
+                    password.length < 6 ||
+                    /[A-Z]/.test(password) == false
+                ) {
+                    alert('6자이상 입력해주세요 또는 대문자로 입력해주세요');
+                    e.preventDefault();
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        </script>
+
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Navbar</span>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="gauge"></div>
+        </nav>
+        <button class="ui-open" style="margin-top: 70px">열기</button>
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+
+        <div style="height: 1000px"></div>
+
+        <div
+            class="lorem"
+            style="width: 200px; height: 100px; overflow-y: scroll"
+        >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+            voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa
+            itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi
+            quae consectetur praesentium exercitationem.
+        </div>
+
+        <script>
+            //스크롤바 내린양만큼 width 를 증가 올린양 만큼 width 감소;
+
+            window.addEventListener('scroll', function () {
+                var htmlscroll =
+                    document.querySelector('html').scrollHeight -
+                    document.querySelector('html').clientHeight; //웹페이지 살제높이 - 웹페이지 보이는 높이
+                var htmlsize = document.querySelector('html').scrollTop; // 웹페이지 스크롤양;
+                var scrolled = (htmlsize / htmlscroll) * 100; //웹페이지 살제높이 - 웹페이지 보이는 높이 / 웹페이지 스크롤양; * 100
+                document.querySelector('.gauge').style.width = scrolled + '%';
+            });
+        </script>
+
+        <script>
+            //div의 스크롤바 내린양 + 눈에보이는 div 높이 >= div의 실제높이
+            document
+                .querySelector('.lorem')
+                .addEventListener('scroll', function () {
+                    var scrollcheck =
+                        document.querySelector('.lorem').scrollTop; //div의 스크롤바 내린양
+                    var scrollh = document.querySelector('.lorem').scrollHeight; //div의 실제높이
+                    var scrollview =
+                        document.querySelector('.lorem').clientHeight; //눈에보이는 div 높이
+
+                    if (scrollcheck + scrollview >= scrollh) {
+                        alert('다 읽으셨습니다.');
+                    }
+                });
+        </script>
+
+        <script>
+            window.addEventListener('scroll', function () {
+                const scrollfont = document.querySelector('.navbar-brand');
+                if (window.scrollY >= 100) {
+                    scrollfont.style.fontSize = '10px';
+                } else {
+                    scrollfont.style.fontSize = '30px';
+                }
+            });
+        </script>
+
+        <script>
+            $('.ui-open').on('click', function () {
+                $('.black-bg').addClass('show-modal');
+            });
+            $('.btn').on('click', function () {
+                $('.black-bg').removeClass('show-modal');
+            });
+        </script>
+
+        <script>
+            document
+                .querySelector('.navbar-toggler')
+                .addEventListener('click', function () {
+                    document
+                        .querySelector('.list-group')
+                        .classList.toggle('view');
+                });
+
+            // document
+            //     .getElementsByClassName('navbar-toggler')[0]
+            //     .addEventListener('click', function () {
+            //         document
+            //             .getElementsByClassName('list-group')[0]
+            //             .classList.toggle('view');
+            //     });
+        </script>
+
+        <script>
+            document
+                .querySelector('.black-bg')
+                .addEventListener('click', function (e) {
+                    if (e.target == document.querySelector('.black-bg')) {
+                        $('.black-bg').removeClass('show-modal');
+                    }
+                });
+        </script>
+
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>

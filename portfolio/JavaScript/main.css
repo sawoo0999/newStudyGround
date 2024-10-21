@@ -1,0 +1,145 @@
+.alert-box {
+    width: 50%;
+    padding: 30px;
+    background: skyblue;
+    border-radius: 10px;
+    display: none;
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.list-group {
+    overflow: hidden;
+    height: 0px;
+    transition: all 1s;
+}
+.black-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show-modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.view {
+    height: 400px;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    transform: translateY(0px);
+    transition: all 1s;
+}
+
+.dark-mod {
+    background-color: black;
+    color: white;
+}
+
+.light-mod {
+    background: white;
+    color: black;
+}
+
+.slide-container {
+    width: 300vw;
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    font-size: 1px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    transition: all 1s;
+}
+
+.gauge {
+    width: 0;
+    height: 5px;
+    background-color: aqua;
+    transition: all 0.5s;
+}
+
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.tab-button {
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+.orange {
+    border-top: 2px solid orange;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #ccc;
+    color: black;
+    margin-top: -2px;
+}
+.tab-content {
+    display: none;
+    padding: 10px;
+}
+.show {
+    display: block;
+}
+
+.size-hide {
+    display: none;
+}
+
+.card-background {
+    width: 3000px;
+    margin-top: 800px;
+    margin-bottom: 1600px;
+}
+
+.card-box img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.card-box {
+    position: sticky;
+    top: 400px;
+    margin-top: 200px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>태조 이성계가 태어난 년도는?</p>
+        <input type="text" id="answer" value="" />
+        <button id="send-answer" onclick="test()">제출</button>
+
+        <div><span id="countdown">5</span>초 이내 구매시 사은품 증정!</div>
+        <script>
+            var count = 5;
+
+            function showtime() {
+                count -= 1;
+                if (count >= 0) {
+                    document.querySelector('#countdown').innerHTML = count;
+                }
+            }
+
+            setInterval(showtime, 1000);
+
+            // var plus = 0;
+            // var inputValue = document.querySelector('#answer');
+            // function test() {
+            //     plus++;
+            //     if (inputValue.value == 1334) {
+            //         alert('성공');
+            //         plus = 0;
+            //     } else if (plus == 3) {
+            //         alert('실패');
+            //         plus = 0;
+            //     }
+            // }
+
+            // var 예금액 = 10000;
+            // var 미래예금액 = 0;
+            // var 년수 = 2;
+
+            // function showcash() {
+            //     if (예금액 >= 50000) {
+            //         미래예금액 = 예금액 * 1.2 * 1.2;
+            //     } else if (예금액 < 50000) {
+            //         미래예금액 = 예금액 * 1.15 * 1.15;
+            //     }
+            // }
+            // showcash();
+            // document.write(미래예금액);
+
+            //     var first = 360;
+            //     var max = 0;
+
+            //     function showmax() {
+            //         for (var i = 0; i <= 2; i++) {
+            //            max = max + first;
+            //              first = first / 1.5;
+            //          }
+            //      }
+
+            //     max = first + (first * 2) / 3 + (((first * 2) / 3) * 2) / 3;
+
+            //     showmax();
+            //     document.write(max);0
+
+            //
+        </script>
+
+        <script>
+            // function ms(분, 초) {
+            //     var result = (분 * 60 + 초) * 1000;
+            //     return result;
+            // }
+
+            // ms();
+            // document.write(ms(2, 10));
+
+            function cash(가격, 첫구매) {
+                var discount = 가격 - 가격 * 0.1;
+                if (첫구매 == true) {
+                    discount = discount - 1.5;
+                }
+                return discount;
+            }
+
+            document.write(cash(10, true));
+        </script>
+    </body>
+</html>

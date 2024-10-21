@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"></div>
+        </div>
+
+        <div class="container">
+            <button class="btn btn-danger plus">더보기</button>
+        </div>
+
+        <div class="container mt-3">
+            <button class="btn btn-danger cash">가격순 정렬</button>
+            <button class="btn btn-danger named">다나가 정렬</button>
+            <button class="btn btn-danger limited">60000원 이하 정렬</button>
+        </div>
+
+        <script>
+            // var array = [7, 3, 5, 2, 40];
+            // var array2 = ['다', '나', '가'];
+            // array.sort(function (a, b) {
+            //     return a - b;
+            // });
+            // array2.sort();
+            // console.log(array);
+            // console.log(array2);
+
+            // var array = [7, 3, 5, 2, 40];
+            // var newarray = array.filter(function (a) {
+            //     return a < 4;
+            // });
+            // console.log(newarray);
+
+            // var array = [7, 3, 5, 2, 40];
+            // var newarray = array.map(function (a) {
+            //     return a * 4;
+            // });
+            // console.log(newarray);
+        </script>
+        <script>
+            var count = 0;
+            var products = [
+                { id: 0, price: 70000, title: 'Blossom Dress' },
+                { id: 1, price: 50000, title: 'Springfield Shirt' },
+                { id: 2, price: 60000, title: 'Black Monastery' },
+            ];
+
+            $('.named').click(function () {
+                products.sort(function (a, b) {
+                    if (a.title > b.title) {
+                        return -1;
+                    } else if (b.title > a.title) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                });
+
+                $('.row').html('');
+
+                var list = `                <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100" />
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+            </div>`;
+
+                for (let i = 0; i < 3; i++) {
+                    $('.row').append(list);
+                }
+
+                for (let i = 0; i < products.length; i++) {
+                    card(i);
+                }
+
+                function card(구멍) {
+                    var title = document.querySelectorAll('.row h5')[구멍];
+                    var price = document.querySelectorAll('.row p')[구멍];
+                    title.innerHTML = products[구멍].title;
+                    price.innerHTML = '가격 : ' + products[구멍].price;
+                }
+            });
+
+            $('.cash').click(function () {
+                products.sort(function (a, b) {
+                    return a.price - b.price;
+                });
+                $('.row').html('');
+                var list = `                <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100" />
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+            </div>`;
+
+                for (let i = 0; i < 3; i++) {
+                    $('.row').append(list);
+                }
+
+                for (let i = 0; i < products.length; i++) {
+                    card(i);
+                }
+
+                function card(구멍) {
+                    var title = document.querySelectorAll('.row h5')[구멍];
+                    var price = document.querySelectorAll('.row p')[구멍];
+                    title.innerHTML = products[구멍].title;
+                    price.innerHTML = '가격 : ' + products[구멍].price;
+                }
+            });
+
+            $('.limited').click(function () {
+                var newproduct = products.filter(function (a) {
+                    return a.price <= 60000;
+                });
+
+                $('.row').html('');
+
+                var list = `                <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100" />
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+            </div>`;
+
+                for (let i = 0; i < newproduct.length; i++) {
+                    $('.row').append(list);
+                }
+
+                for (let i = 0; i < newproduct.length; i++) {
+                    card(i);
+                }
+
+                function card(구멍) {
+                    var title = document.querySelectorAll('.row h5')[구멍];
+                    var price = document.querySelectorAll('.row p')[구멍];
+                    title.innerHTML = newproduct[구멍].title;
+                    price.innerHTML = '가격 : ' + newproduct[구멍].price;
+                }
+            });
+
+            $('.plus').on('click', function () {
+                count += 1;
+                if (count == 1) {
+                    $.get('https://codingapple1.github.io/js/more1.json').done(
+                        (data) => {
+                            data.forEach((a) => {
+                                var list = `                <div class="col-sm-4">
+                            <img src="https://via.placeholder.com/600" class="w-100" />
+                            <h5>${a.title}</h5>
+                            <p>가격 : ${a.price}</p>
+                            </div>`;
+                                $('.row').append(list);
+                            });
+                        },
+                    );
+                } else if (count == 2) {
+                    $.get('https://codingapple1.github.io/js/more2.json').done(
+                        (data) => {
+                            data.forEach((a) => {
+                                var list = `                <div class="col-sm-4">
+                            <img src="https://via.placeholder.com/600" class="w-100" />
+                            <h5>${a.title}</h5>
+                            <p>가격 : ${a.price}</p>
+                            </div>`;
+                                $('.row').append(list);
+                            });
+                        },
+                    );
+
+                    document.querySelector('.btn').style.display = 'none';
+                }
+            });
+        </script>
+        <script>
+            var list = `                <div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100" />
+                    <h5>Card title</h5>
+                    <p>가격 : 70000</p>
+                    <button class="buy">구매</button>
+                </div>`;
+
+            for (let i = 0; i < 3; i++) {
+                $('.row').append(list);
+            }
+
+            // var arr = [1, 2, 3];
+            // var newarr = JSON.stringify(arr);
+            // localStorage.setItem('num', newarr); // 자료 입력
+        </script>
+
+        <script>
+            for (let i = 0; i < products.length; i++) {
+                $('.buy')
+                    .eq(i)
+                    .click(function () {
+                        var bro = document.querySelectorAll('.buy')[i];
+                        var prebro = bro.previousElementSibling;
+                        var last = prebro.previousElementSibling;
+                        var arrayshop = [last.innerHTML];
+                        if (localStorage.getItem('cart') == null) {
+                            localStorage.setItem(
+                                'cart',
+                                JSON.stringify(arrayshop),
+                            );
+                        } else {
+                            var getcar = JSON.parse(
+                                localStorage.getItem('cart'),
+                            );
+
+                            if (getcar[i] != last.innerHTML) {
+                                getcar.push(last.innerHTML);
+                            }
+                            localStorage.setItem(
+                                'cart',
+                                JSON.stringify(getcar),
+                            );
+                        }
+                    });
+            }
+        </script>
+        <script src="JS/JS.js"></script>
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>

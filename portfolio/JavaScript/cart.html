@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div>장바구니 페이지</div>
+        <p>상품1</p>
+        <p>상품2</p>
+        <p>상품3</p>
+        <script>
+            var shop = JSON.parse(localStorage.getItem('cart'));
+            shop.forEach((a, i) => {
+                var list = `                <div class="col-sm-4">
+                            <img src="https://via.placeholder.com/600" class="w-100" />
+                            <h5>${a}</h5>
+                            </div>`;
+                $('p').eq(i).append(list);
+            });
+        </script>
+    </body>
+</html>

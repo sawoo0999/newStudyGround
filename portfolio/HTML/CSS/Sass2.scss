@@ -1,0 +1,78 @@
+@use "reset";
+
+@mixin main-box() {
+  width: 50%;
+  height: 20px;
+  border: 1px solid gray;
+  padding: 20px;
+  margin: auto;
+}
+
+@mixin active() {
+  background-color: rgb(52, 116, 255);
+  color: white;
+}
+
+@mixin p-box($p-color) {
+  width: 50%;
+  height: 20px;
+  padding: 20px;
+  background-color: $p-color;
+  border: none;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+@mixin p-span() {
+  font-weight: bolder;
+}
+
+@mixin row-col($col-width) {
+  float: left;
+  width: $col-width;
+  height: 40px;
+  padding: 8px;
+  background: rgb(165, 165, 165);
+  border: 0.5px solid gray;
+  margin-top: 10px;
+}
+
+ul {
+  .active {
+    @include main-box();
+  }
+  .active:hover {
+    @include active();
+  }
+}
+
+.main-green {
+  @include p-box(rgb(126, 243, 126));
+}
+
+.main-blue {
+  @include p-box(rgb(89, 139, 248));
+}
+
+.main-yellow {
+  @include p-box(rgb(248, 208, 96));
+}
+
+span {
+  @include p-span();
+}
+
+.row {
+  .col-6 {
+    @include row-col(50%);
+  }
+
+  .col-4 {
+    @include row-col(33.3%);
+  }
+
+  .col-3 {
+    @include row-col(25%);
+  }
+}

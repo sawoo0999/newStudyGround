@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="main.css" rel="stylesheet" />
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+        ;
+    </head>
+    <body>
+        <form class="container my-5 form-group">
+            <p>상품선택</p>
+            <select class="form-select mt-2"></select>
+
+            <select class="form-select mt-2 size-hide"></select>
+        </form>
+
+        <div>
+            <span class="name">상품</span> / <span class="price">가격</span>
+        </div>
+
+        <div class="container mt-5">
+            <ul class="list">
+                <li class="tab-button" data-id="0">Products</li>
+                <li class="tab-button orange" data-id="1">Information</li>
+                <li class="tab-button" data-id="2">Shipping</li>
+            </ul>
+            <div class="tab-content">
+                <p>상품설명입니다. Product</p>
+            </div>
+            <div class="tab-content show">
+                <p>스펙설명입니다. Information</p>
+            </div>
+            <div class="tab-content">
+                <p>배송정보입니다. Shipping</p>
+            </div>
+        </div>
+
+        <script src="JS/JS.js"></script>
+        <script src="CSS/js/bootstrap.min.js"></script>
+    </body>
+</html>
