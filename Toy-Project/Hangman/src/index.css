@@ -1,0 +1,68 @@
+:root {
+  background-color: #3c3535;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  color: rgb(128, 113, 113);
+  margin-bottom: 50px;
+}
+
+.question-item-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #777373;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-item-puzzle {
+  font-size: 36px;
+  letter-spacing: 5px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.question-item-game-over {
+  font-size: 24px;
+}
+
+.question-item-success {
+  color: #4caf50;
+}
+
+.question-item-failure {
+  color: #d32f2f;
+}
+
+.question-item-attempts {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.question-item-button {
+  background-color: #463c3c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.question-item-button:hover {
+  background-color: #45a049;
+}
