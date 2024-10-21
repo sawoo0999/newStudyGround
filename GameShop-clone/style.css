@@ -1,0 +1,93 @@
+body,
+p,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  min-width: 1340px;
+  background: linear-gradient(45deg, #1c1137, #291945, #2c0532);
+}
+
+#header {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#header .header_inner {
+  z-index: 120;
+  position: relative;
+  height: 150px;
+}
+
+#header .header_inner .special_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+}
+
+#header .header_inner .menu_area {
+  position: absolute;
+  top: 28px;
+  left: -110px;
+}
+
+#header .header_inner .main_icon {
+  font-size: 75px;
+  color: white;
+}
+
+#header .header_inner .title_area {
+  position: absolute;
+  top: 38px;
+  left: -30px;
+}
+
+#header .header_inner .menu_title {
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+}
+
+#header .header_inner .right_area {
+  position: absolute;
+  top: 52px;
+  right: -250px;
+  font-size: 18px;
+  color: white;
+}
+
+#header .header_inner .right_area span {
+  margin-right: 20px;
+}
+#header .header_inner .right_area i {
+  margin-right: 5px;
+}
+
+#header .header_inner .right_area .user_icon {
+  font-size: 25px;
+}
